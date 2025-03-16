@@ -26,3 +26,29 @@ Second Largest Score: {test_scores[8]}""")
 test_scores.pop(0)
 test_scores.pop(1)
 print(f"Average Score (two lowest dropped): {(sum(test_scores))/8}")
+
+"""CHAPTER 8 no. 15"""
+lst = [1 if j==0 else 0 for i in range(12) for j in range(i)]
+print(lst)
+
+"""CHAPTER 10 no. 26"""
+solutions = []
+while True:
+    try:
+        test = float(input("Enter a number: ")) # this still accepts numbers with decimals. however, it will still print out nothing.
+        break
+    except Exception as e:
+        continue
+
+for i in range(1,1001):
+    for j in range(1,i):
+        if i**2 - j**2 == test: # appends if match
+            solutions.append((i, j))
+            
+if solutions:
+    print(f"The following differences leads to this number -> {test}")
+    for x, y in solutions:
+        print(f"{x}**2 - {y}**2 = {test}")
+
+else:
+    print("No solutions found within the range.")
