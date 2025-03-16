@@ -24,7 +24,7 @@ Second Largest Score: {test_scores[8]}""")
 
 # pops out the two lowest scores, then computes the new average
 test_scores.pop(0)
-test_scores.pop(1)
+test_scores.pop(0)
 print(f"Average Score (two lowest dropped): {(sum(test_scores))/8}")
 
 """CHAPTER 8 no. 15"""
