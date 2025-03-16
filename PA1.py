@@ -6,7 +6,7 @@ counter = 0
 while counter < 10:
     try:
         score = float(input(f"{[counter+1]} Enter test score: "))
-        if score > 100:
+        if score > 100 or score < 0:
             print("Score greater than 100 is entered. Try again.")
             raise ValueError("Score greater than 100 is entered.") # raises an error whenever a score greater than 100 is entered
         else:
@@ -17,8 +17,9 @@ while counter < 10:
         
 test_scores.sort() # sorts out test_scores variable in an ascending order
 
-print(f"""Highest score: {test_scores[9]}
-Lowset score: {test_scores[0]}
+# this print statement will print out the highest and lowest score, average, and the second largest score.
+print(f"""Highest score: {max(test_scores)}
+Lowset score: {min(test_scores)}
 Average: {(sum(test_scores))/10}
 Second Largest Score: {test_scores[8]}""")
 
@@ -27,9 +28,12 @@ test_scores.pop(0)
 test_scores.pop(0)
 print(f"Average Score (two lowest dropped): {(sum(test_scores))/8}")
 
+
+
 """CHAPTER 8 no. 15"""
 lst = [1 if j==0 else 0 for i in range(12) for j in range(i)]
 print(lst)
+
 
 """CHAPTER 10 no. 26"""
 solutions = []
@@ -38,6 +42,7 @@ while True:
         test = float(input("Enter a number: ")) # this still accepts numbers with decimals. however, it will still print out nothing.
         break
     except Exception as e:
+        print(f"ERROR: {e}")
         continue
 
 for i in range(1,1001):
